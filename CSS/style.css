@@ -125,18 +125,17 @@
 h2{
     position: relative;
     top: 50px;
-    left: 500px;
+    left: 470px;
 }
 
 .table{
     position: relative;
-    width: 900px;
+    width: 1000px;
     height: auto;
     top: 100px;
-    left: 500px;
+    left: 470px;
   }
 
-td {
-    height: 40px;
+td, th {
+    height: 60px;
   }
-
