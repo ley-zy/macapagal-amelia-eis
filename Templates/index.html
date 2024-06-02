@@ -7,35 +7,73 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='Bulma/bulma.css') }}">
     <title>Flask App</title>
     <style>
-        .box{
-            width: 500px;
-            margin: 0 auto;
+       .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #EBE3D5;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background: #F7C8E0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .button {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .login-box {
+                padding: 15px;
+            }
+
+            .field {
+                margin-bottom: 10px;
+            }
+
+            .button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1 class="title is-1 has-text-centered	is-family-code	has-text-weight-bold	">LOGIN</h1>
-
-    <form action="check-user" method="POST" class="box has-background-warning-light">
-        <div class="field">
-          <label class="label">Username</label>
-          <div class="control">
-            <input class="input" type="text" name="username" placeholder="e.g. leyyy@example.com" />
-          </div>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="title has-text-centered">Login</h1>
+            <form action="check-user" method="POST">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" name="username" placeholder="e.g. johndoe" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" name="password" placeholder="********" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-primary">Login</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input class="input" type="password" name="password" placeholder="********" />
-          </div>
-        </div>
-      
-        <div class="has-text-centered">
-            <button type="submit" class="button is-primary is-medium is-danger">LOGIN</button>
-        </div>
-    </form>
+    </div>
 </body>
 
 </html>

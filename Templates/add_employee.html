@@ -5,20 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ADD EMPLOYEE</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='Bulma/bulma.css') }}">
-  <link rel="stylesheet" href="static/CSS/style.css">
+  <link rel="stylesheet" href="static/Bulma/bulma.css">
+  <link rel="stylesheet" href="static/CSS/add&update_employee.css">
 </head>
 
 <body>
+  <form action="add-form" method="POST">
 
   <div class=".container.is-max-widescreen	">
     <div class="notification  has-background-warning-light">
-      <strong class="	is-size-3 has-text-weight-bold ">Employee Information System</strong>
+      <strong class="is-size-3 has-text-weight-bold has-text-left-mobile">Employee Information System</strong>
     </div>
   </div>
 
-  <div class="fixed1">
-  </div>
 
   <div class="employee_list">
     <h2 class="employee is-size-3	has-text-weight-bold	">Employee List<h2>
@@ -50,52 +49,53 @@
   <h2 class="title is-2">ADD EMPLOYEE</h2>
 
   <div class="background">
-      <label class="label is-size-3 has-text-weight-bold">EMPLOYEE ID</label>
-      <div class="control">
-        <input class="input" type="text">
+    <label class="label has-text-weight-bold">EMPLOYEE ID</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Employee ID" name="emp_id">
+    </div>
+
+    <label class="label has-text-weight-bold">LAST NAME</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Last Name" name="lname">
+    </div>
+
+    <label class="label has-text-weight-bold">FIRST NAME</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="First Name" name="fname">
+    </div>
+
+    <label class="label  has-text-weight-bold">MIDDLE NAME</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Middle Name" name="mname">
+    </div>
+
+    <label class="label has-text-weight-bold">ADDRESS</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Address">
+    </div>
+
+    <label class="label has-text-weight-bold">BIRTHDAY</label>
+    <div class="control">
+      <input class="input" type="date" placeholder="Birthday">
+    </div>
+
+    <label class="label  has-text-weight-bold">CIVIL STATUS</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>SINGLE</option>
+          <option>MARRIED</option>
+          <option>DIVORCED</option>
+          <option>WIDOWED</option>
+        </select>
       </div>
+    </div>
 
-      <label class="label is-size-3 has-text-weight-bold">LAST NAME</label>
-      <div class="control">
-        <input class="input" type="text">
-      </div>
-
-      <label class="label is-size-3 has-text-weight-bold">FIRST NAME</label>
-      <div class="control">
-        <input class="input" type="text">
-      </div>
-
-      <label class="label is-size-3 has-text-weight-bold">MIDDLE NAME</label>
-      <div class="control">
-        <input class="input" type="text">
-      </div>
-
-      <label class="label is-size-3 has-text-weight-bold">ADDRESS</label>
-      <div class="control">
-        <input class="input" type="text">
-      </div>
-
-      <label class="label is-size-3 has-text-weight-bold">BIRTHDAY</label>
-      <div class="control">
-        <input class="input" type="date">
-      </div>
-
-      <label class="label is-size-3 has-text-weight-bold">CIVIL STATUS</label>
-      <div class="control">
-        <div class="select">
-          <select>
-            <option>SINGLE</option>
-            <option>MARRIED</option>
-            <option>DIVORCED</option>
-            <option>WIDOWED</option>
-          </select>
-        </div>
-      </div>
-
-      <button class="button is-medium">ADD</button>
+    <button class="button is-medium">ADD</button>
 
 
-      </div>
+  </div>
+  </form>
 
 </body>
 
