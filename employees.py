@@ -11,7 +11,6 @@ class Employees:
         return result
     
     def add_employee(emp_id, lname, fname, mname):
-        print(emp_id)
         query = "INSERT INTO employees VALUES (%s, %s, %s, %s)"
 
         try: 

@@ -34,7 +34,7 @@ def employee_list():
 def add_employees():
     return render_template('add_employee.html')
 
-@app.route('/add-employee', methods=["POST"])
+@app.route('/add-form', methods=["POST"])
 def add_employee():
     emp_id = request.form["emp_id"]
     lname = request.form["lname"]
