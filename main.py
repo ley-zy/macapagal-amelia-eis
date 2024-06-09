@@ -4,7 +4,7 @@ from employees import Employees
 
 app = Flask(__name__)
 app.secret_key = "gege"
- 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -20,15 +20,12 @@ def check_user():
         return redirect('/employee-list')
     else:
         return render_template('index.html')
-    
+
 @app.route('/employee-list')
 def employee_list():
     employees = Employees.get_all()
-  
-    if "message" not in session:
-        session["message"] = ""
-
-    return render_template('employee_list.html', employees=employees, message=session.get('message'))
+    message = session.pop('message', "")
+    return render_template('employee_list.html', employees=employees, message=message)
 
 @app.route('/add-form')
 def add_employees():
@@ -44,12 +41,11 @@ def add_employee():
     success = Employees.add_employee(emp_id, lname, fname, mname)
 
     if success:
-        session["message"] = "Successfuly added"
+        session["message"] = "Successfully added"
     else:
         session["message"] = "Failed to add employee"
-
+    
     return redirect('/employee-list')
 
-
 if __name__ == '__main__':
-    app.run()    
+    app.run()
