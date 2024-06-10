@@ -178,6 +178,20 @@ table {
     width: 100%;
 }
 
+.add-employee-button{
+    position: relative;
+    top: 165px;
+    left: 900px;
+    z-index: 1;
+}
+
+.add-employee-button {
+    position: relative;
+    top: -165px;
+    left: 900px;
+    width: 150px;
+}
+
 @media (max-width: 1023px) {
     .fixed1 {
         width: 100%;
@@ -220,6 +234,16 @@ table {
     
     table {
         width: 100%;
+    }
+
+    .add-employee-button {
+        position: relative;
+        top: 50%;
+        left: -250px;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
     }
 
 }
