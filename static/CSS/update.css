@@ -1,0 +1,230 @@
+.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #F0DBDB;
+    padding: 10px;
+    width: 100%;
+    height: 110px;
+    z-index: 100;
+  }
+  
+  .employee_list {
+    position: fixed;
+    left: 1%;
+    top: 100px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .employee {
+    color: #B3A492;
+    position: fixed;
+    top: 125px;
+    left: 90px;
+  }
+  
+  .fixed1 {
+    position: fixed;
+    left: 0;
+    top: 12.5%;
+    background-color: #F6C391;
+    padding: 10px;
+    width: 27%;
+    height: 90%;
+    overflow-y: auto;
+  }
+  
+  .personal {
+    position: fixed;
+    left: 1%;
+    top: 205px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .personal1 {
+    color: #B3A492;
+    position: fixed;
+    top: 225px;
+    left: 45px;
+  }
+  
+  .education {
+    position: fixed;
+    left: 1%;
+    top: 310px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .educational {
+    color: #B3A492;
+    position: fixed;
+    top: 330px;
+    left: 25px;
+  }
+  
+  .experience {
+    position: fixed;
+    left: 1%;
+    top: 415px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .experience1 {
+    color: #B3A492;
+    position: fixed;
+    top: 435px;
+    left: 65px;
+  }
+  
+  .trainings {
+    position: fixed;
+    left: 1%;
+    top: 520px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .training1 {
+    color: #B3A492;
+    position: fixed;
+    top: 540px;
+    left: 125px;
+  }
+  
+  .logout {
+    position: fixed;
+    left: 1%;
+    top: 625px;
+    background-color: #FFF2D8;
+    padding: 10px;
+    width: 380px;
+    height: 100px;
+  }
+  
+  .logout1 {
+    color: #B3A492;
+    position: fixed;
+    top: 650px;
+    left: 140px;
+  }
+  
+  h2 {
+    position: relative;
+    top: 30px;
+    left: 800px;
+  }
+  
+  .background {
+    position: fixed;
+    left: 33%;
+    top: 27%;
+    background-color: #dbc5a8;
+    padding: 10px;
+    width: 950px;
+    height: 485px;
+    z-index: 100;
+  }
+  
+  .control {
+    position: relative;
+    top: -40px;
+    width: 50%;
+    left: 40%;
+  }
+  
+  .label {
+    position: relative;
+    top: 20px;
+    left: 90px;
+    color: #321E1E;
+    font-size: 30px;
+  }
+  
+  .control,
+  .label {
+    margin-bottom: -50px;
+  }
+  
+  .button {
+    position: relative;
+    top: 30px;
+    left: 420px;
+    width: 150px;
+    background-color: #FFA069;
+  }
+  
+  @media (max-width: 1023px) {
+    .fixed1 {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+  
+    .employee_list,
+    .personal,
+    .education,
+    .experience,
+    .trainings,
+    .logout {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+  
+    .employee,
+    .personal1,
+    .educational,
+    .experience1,
+    .training1,
+    .logout1 {
+      position: static;
+      text-align: center;
+    }
+  
+    h2 {
+      position: static;
+      text-align: center;
+    }
+  
+    .background {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+  
+    .control {
+      position: relative;
+      width: 50%;
+      left: 50%;
+    }
+  
+    .label {
+      position: relative;
+      left: 10px;
+      text-align: left;  
+      width: 50%; 
+    }
+  
+    .button {
+      position: relative;
+      left: 120px;
+      width: 50%;
+      height: 40px;
+      top: 12px;
+    }
+  }
+  

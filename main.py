@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, session
+# main.py
+from flask import Flask, render_template, request, redirect, session, url_for
 from users import Users
 from employees import Employees
 
@@ -45,6 +46,34 @@ def add_employee():
     else:
         session["message"] = "Failed to add employee"
     
+    return redirect('/employee-list')
+
+@app.route('/update-employee/<emp_id>', methods=['GET', 'POST'])
+def update_employee(emp_id):
+    if request.method == 'POST':
+        lname = request.form["lname"]
+        fname = request.form["fname"]
+        mname = request.form["mname"]
+
+        success = Employees.update_employee(emp_id, lname, fname, mname)
+
+        if success:
+            session["message"] = "Successfully updated"
+        else:
+            session["message"] = "Failed to update employee"
+        
+        return redirect('/employee-list')
+    else:
+        employee = Employees.get_employee(emp_id)
+        return render_template('update_employee.html', employee=employee)
+
+@app.route('/delete-employee/<emp_id>')
+def delete_employee(emp_id):
+    success = Employees.delete_employee(emp_id)
+    if success:
+        session["message"] = "Successfully deleted"
+    else:
+        session["message"] = "Failed to delete employee"
     return redirect('/employee-list')
 
 if __name__ == '__main__':

@@ -192,6 +192,20 @@ table {
     width: 150px;
 }
 
+.update_button{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+}
+
+.delete_button{
+    position: relative;
+    left: 15px;
+    top: -0px;
+    width: 100px;
+}
+
 @media (max-width: 1023px) {
     .fixed1 {
         width: 100%;
@@ -244,6 +258,13 @@ table {
         width: 100px;
         height: 30px;
         font-size: 12px;
+    }
+
+    .delete_button{
+        position: relative;
+        left: 0px;
+        top: 2px;
+        width: 100px;
     }
 
 }
