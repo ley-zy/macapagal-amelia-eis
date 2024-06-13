@@ -7,6 +7,73 @@
     <title>Employee List</title>
     <link rel="stylesheet" href="static/Bulma/bulma.css">
     <link rel="stylesheet" href="static/CSS/style.css">
+    <style>
+        #success-card {
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            display: none;
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            background: white;
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        #success-upper-side {
+            padding: 2em;
+            background-color: #A67B5B;
+            color: #fff;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+
+        #checkmark {
+            font-weight: lighter;
+            fill: #fff;
+            margin: -3.5em auto auto 20px;
+        }
+
+        #status {
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1em;
+            margin-top: -.2em;
+            margin-bottom: 0;
+        }
+
+        #success-lower-side {
+            padding: 2em;
+            background: #FED8B1;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        #success-message {
+            margin-top: -.5em;
+            color: #757575;
+            letter-spacing: 1px;
+        }
+
+        #contBtn {
+            margin-top: 1.5em;
+            text-decoration: none;
+            background: #A67B5B;
+            color: #fff;
+            padding: .8em 3em;
+            border-radius: 25px;
+            transition: all .4s ease;
+        }
+
+        #contBtn:hover {
+            box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
+            transition: all .4s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,43 +90,40 @@
             <h3 id="status">Success</h3>
         </div>
         <div id="success-lower-side">
-            <p id="success-message">Employee successfully added.</p>
+            <p id="success-message">{{ message }}</p>
             <button id="contBtn" onclick="hideSuccessCard()">Continue</button>
         </div>
     </div>
 
     <!-- Employee List Content -->
-    <div class="header .container.is-max-widescreen	">
-        <div class="notification  has-background-warning-light">
+    <div class="header .container.is-max-widescreen">
+        <div class="notification has-background-warning-light">
             <strong class="is-size-3 has-text-weight-bold has-text-left-mobile">Employee Information System</strong>
         </div>
     </div>
 
     <div class="employee_list">
-        <h2 class="employee is-size-3	has-text-weight-bold	">Employee List<h2>
+        <h2 class="employee is-size-3 has-text-weight-bold">Employee List</h2>
     </div>
 
     <div class="personal">
-        <h2 class="personal1  is-size-3	has-text-weight-bold	">Personal Information<h2>
+        <h2 class="personal1 is-size-3 has-text-weight-bold">Personal Information</h2>
     </div>
 
     <div class="education">
-        <h2 class="educational is-size-3	has-text-weight-bold	">Educational Information<h2>
+        <h2 class="educational is-size-3 has-text-weight-bold">Educational Information</h2>
     </div>
-
 
     <div class="experience">
-        <h2 class="experience1 is-size-3	has-text-weight-bold	">Work Experience<h2>
+        <h2 class="experience1 is-size-3 has-text-weight-bold">Work Experience</h2>
     </div>
-
 
     <div class="trainings">
-        <h2 class="training1 is-size-3	has-text-weight-bold	">Trainings<h2>
+        <h2 class="training1 is-size-3 has-text-weight-bold">Trainings</h2>
     </div>
 
-
     <div class="logout">
-        <h2 class="logout1 is-size-3	has-text-weight-bold	">Logout<h2>
+        <h2 class="logout1 is-size-3 has-text-weight-bold">Logout</h2>
     </div>
 
     <h2 class="title is-2">EMPLOYEE LIST</h2>
@@ -79,7 +143,7 @@
                             <th class="has-text-centered">Last Name</th>
                             <th class="has-text-centered">First Name</th>
                             <th class="has-text-centered">Middle Name</th>
-                            <th class="has-text-centered">Actions</th> 
+                            <th class="has-text-centered">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,7 +155,7 @@
                             <td class="has-text-centered is-size-5">{{ employee[3] }}</td>
                             <td class="has-text-centered">
                                 <a href="{{ url_for('update_employee', emp_id=employee[0]) }}" class="update_button button is-warning is-small">Update</a>
-                                <a href="{{ url_for('delete_employee', emp_id=employee[0]) }}" class="delete_button button is-danger is-small" onclick="return confirm('Are you sure you want to delete this employee?');">Delete</a>
+                                <a href="{{ url_for('delete_employee', emp_id=employee[0]) }}" class="delete_button button is-danger is-small">Delete</a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -103,12 +167,11 @@
 
     <!-- JavaScript to Show/Hide Success Card -->
     <script>
-        // Set a JavaScript variable with the value of the message
-        var message = "{{ message }}";
-
         // Check if there's a message
+        var message = "{{ message }}";
         if (message) {
             document.getElementById('success-card').style.display = 'block';
+            document.getElementById('success-message').textContent = message;
         }
 
         function hideSuccessCard() {

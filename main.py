@@ -42,7 +42,7 @@ def add_employee():
     success = Employees.add_employee(emp_id, lname, fname, mname)
 
     if success:
-        session["message"] = "Successfully added"
+        session["message"] = "Employee successfully added"
     else:
         session["message"] = "Failed to add employee"
     
@@ -58,7 +58,7 @@ def update_employee(emp_id):
         success = Employees.update_employee(emp_id, lname, fname, mname)
 
         if success:
-            session["message"] = "Successfully updated"
+            session["message"] = "Employee successfully updated"
         else:
             session["message"] = "Failed to update employee"
         
@@ -71,7 +71,7 @@ def update_employee(emp_id):
 def delete_employee(emp_id):
     success = Employees.delete_employee(emp_id)
     if success:
-        session["message"] = "Successfully deleted"
+        session["message"] = "Employee successfully deleted"
     else:
         session["message"] = "Failed to delete employee"
     return redirect('/employee-list')

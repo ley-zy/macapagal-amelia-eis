@@ -258,12 +258,13 @@ table {
         width: 100px;
         height: 30px;
         font-size: 12px;
+        z-index: -1;
     }
 
     .delete_button{
         position: relative;
         left: 0px;
-        top: 2px;
+        top: 5px;
         width: 100px;
     }
 
